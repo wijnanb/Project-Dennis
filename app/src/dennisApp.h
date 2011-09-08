@@ -14,6 +14,8 @@ class dennisApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
+	
+		void drawPointCloud();
 		
 		void keyPressed(int key);
 		void keyReleased(int key);
@@ -34,6 +36,6 @@ class dennisApp : public ofBaseApp{
 		ofxKinectPlayer 	kinectPlayer;
 
 		ofxCvGrayscaleImage kinectImg;
-	
+		float pointCloudRotationY;
 };
 
