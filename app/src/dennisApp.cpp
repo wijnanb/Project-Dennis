@@ -50,11 +50,11 @@ void dennisApp::draw(){
 	ofSetColor(255, 255, 255);
 	
 	/** video */
-	videoImg.draw(10,10);
+	//videoImg.draw(10,10);
 	
 	/** kinect */
-	kinectImg.draw(660, 10, 640, 480);
-	kinect.draw(10, 500, 320, 240);
+	//kinectImg.draw(660, 10, 640, 480);
+	//kinect.draw(10, 500, 320, 240);
 	
 	drawPointCloud();
 }
@@ -84,10 +84,10 @@ void dennisApp::drawPointCloud() {
 	}
 	
 	ofPixels apenkop;
-	ofLoadImage( apenkop, "monkeyfarts/RGBjpg0014.jpg");
+	ofLoadImage( apenkop, "monkeyfarts/RGBjpg0013.jpg");
 	
 	ofPixels apenkopZ;
-	ofLoadImage( apenkopZ, "monkeyfarts/Zjpg0014.jpg");
+	ofLoadImage( apenkopZ, "monkeyfarts/Zjpg0013.jpg");
 	
 	
 	step = 1;
@@ -95,12 +95,14 @@ void dennisApp::drawPointCloud() {
 		for(int x = 0; x < w; x += step) {
 			
 			ofColor color = apenkop.getColor(x,y);
-			double z = apenkopZ.getColor(x,y).r / 255 + 0.1;
+			if(apenkopZ.getColor(x,y).r!=255) {
+			double z = apenkopZ.getColor(x,y).r / 255.0 + 0.50;
 			
 			ofVec3f cur = kinect.getCalibration().getWorldCoordinateFor(x, y, z);
 			
 			glColor3ub((unsigned char)color.r,(unsigned char)color.g,(unsigned char)color.b);
 			glVertex3f(cur.x, cur.y, cur.z);
+			}
 		}
 	}
 	
