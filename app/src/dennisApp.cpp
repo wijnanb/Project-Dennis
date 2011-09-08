@@ -2,17 +2,29 @@
 
 //--------------------------------------------------------------
 void dennisApp::setup(){
-
+	vidGrabber.setVerbose(true);
+	vidGrabber.initGrabber(320,240);
+	
+    colorImg.allocate(320,240);
 }
 
 //--------------------------------------------------------------
 void dennisApp::update(){
+	bool bNewFrame = false;
+	
+	vidGrabber.grabFrame();
+	bNewFrame = vidGrabber.isFrameNew();
+	
+	if (bNewFrame){
+		colorImg.setFromPixels(vidGrabber.getPixels(), 320,240);
+	}
 	
 }
 
 //--------------------------------------------------------------
 void dennisApp::draw(){
-
+	ofSetHexColor(0xffffff);
+	colorImg.draw(20,20);
 }
 
 //--------------------------------------------------------------

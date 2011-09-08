@@ -18,6 +18,9 @@ class dennisApp : public ofBaseApp{
 		void mouseReleased(int x, int y, int button);
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
-		void gotMessage(ofMessage msg);		
+		void gotMessage(ofMessage msg);	
+	
+		ofVideoGrabber vidGrabber;	
+		ofxCvColorImage	colorImg;
 };
 
