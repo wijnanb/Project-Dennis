@@ -2,29 +2,57 @@
 
 //--------------------------------------------------------------
 void dennisApp::setup(){
-	vidGrabber.setVerbose(true);
-	vidGrabber.initGrabber(320,240);
 	
-    colorImg.allocate(320,240);
+	/** video input */
+	vidGrabber.setVerbose(true);
+	vidGrabber.initGrabber(VIDEO_WIDTH,VIDEO_HEIGHT);
+	
+    videoImg.allocate(VIDEO_WIDTH,VIDEO_HEIGHT);
+	
+	/** kinect init */
+	kinect.init();
+	//kinect.init(true);  // shows infrared instead of RGB video image
+	//kinect.init(false, false);  // disable infrared/rgb video iamge (faster fps)
+	kinect.setVerbose(true);
+	kinect.open();
+	
+	kinectImg.allocate(kinect.width, kinect.height);
 }
 
 //--------------------------------------------------------------
 void dennisApp::update(){
-	bool bNewFrame = false;
 	
+	/** video */
+	bool bNewFrame = false;
 	vidGrabber.grabFrame();
 	bNewFrame = vidGrabber.isFrameNew();
 	
 	if (bNewFrame){
-		colorImg.setFromPixels(vidGrabber.getPixels(), 320,240);
+		videoImg.setFromPixels(vidGrabber.getPixels(), VIDEO_WIDTH,VIDEO_HEIGHT);
 	}
 	
+	
+	
+	/** kinect img */
+	kinect.update();
+	
+	// there is a new frame and we are connected
+	if(kinect.isFrameNew()) {
+		
+		// load grayscale depth image from the kinect source
+		kinectImg.setFromPixels(kinect.getDepthPixels(), kinect.width, kinect.height);
+	}
 }
 
 //--------------------------------------------------------------
 void dennisApp::draw(){
-	ofSetHexColor(0xffffff);
-	colorImg.draw(20,20);
+	/** video */
+	videoImg.draw(10,10);
+	
+	/** kinect */
+	kinectImg.draw(660, 10, 640, 480);
+	
+	kinect.draw(10, 500, 320, 240);
 }
 
 //--------------------------------------------------------------

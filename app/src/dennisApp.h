@@ -2,6 +2,11 @@
 
 #include "ofMain.h"
 #include "ofxOpenCv.h"
+#include "ofxKinect.h"
+
+const int VIDEO_WIDTH = 640;
+const int VIDEO_HEIGHT = 480;
+
 
 class dennisApp : public ofBaseApp{
 
@@ -20,7 +25,15 @@ class dennisApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);	
 	
+			
 		ofVideoGrabber vidGrabber;	
-		ofxCvColorImage	colorImg;
+		ofxCvColorImage	videoImg;
+	
+		ofxKinect 			kinect;
+		ofxKinectRecorder 	kinectRecorder;
+		ofxKinectPlayer 	kinectPlayer;
+
+		ofxCvGrayscaleImage kinectImg;
+	
 };
 
