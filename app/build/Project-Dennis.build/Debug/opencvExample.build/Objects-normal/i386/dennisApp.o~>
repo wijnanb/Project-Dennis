@@ -1,0 +1,8 @@
+/Users/bert/Projects/OpenFrameworks/apps/Project-Dennis/app/src/dennisApp.cpp: In member function 'virtual void dennisApp::setup()':
+/Users/bert/Projects/OpenFrameworks/apps/Project-Dennis/app/src/dennisApp.cpp:5: error: 'vidGrabber' was not declared in this scope
+/Users/bert/Projects/OpenFrameworks/apps/Project-Dennis/app/src/dennisApp.cpp:8: error: 'colorImg' was not declared in this scope
+/Users/bert/Projects/OpenFrameworks/apps/Project-Dennis/app/src/dennisApp.cpp: In member function 'virtual void dennisApp::update()':
+/Users/bert/Projects/OpenFrameworks/apps/Project-Dennis/app/src/dennisApp.cpp:15: error: 'vidGrabber' was not declared in this scope
+/Users/bert/Projects/OpenFrameworks/apps/Project-Dennis/app/src/dennisApp.cpp:19: error: 'colorImg' was not declared in this scope
+/Users/bert/Projects/OpenFrameworks/apps/Project-Dennis/app/src/dennisApp.cpp: In member function 'virtual void dennisApp::draw()':
+/Users/bert/Projects/OpenFrameworks/apps/Project-Dennis/app/src/dennisApp.cpp:27: error: 'colorImg' was not declared in this scope
