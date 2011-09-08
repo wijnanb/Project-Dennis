@@ -152,7 +152,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {964, 2340}}";
 			sepNavSelRange = "{1350, 0}";
-			sepNavVisRange = "{1134, 792}";
+			sepNavVisRange = "{1131, 795}";
 			sepNavWindowFrame = "{{130, 265}, {750, 803}}";
 		};
 	};
@@ -1127,6 +1127,7 @@
 	};
 	4C91F2C31419108000C1E1A1 /* ofConstants.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = ofConstants.h;
 		path = /Users/bert/Projects/OpenFrameworks/libs/openFrameworks/utils/ofConstants.h;
 		sourceTree = "<absolute>";
@@ -1143,6 +1144,7 @@
 	};
 	4C91F2C51419108000C1E1A1 /* ofAppGlutWindow.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = ofAppGlutWindow.h;
 		path = /Users/bert/Projects/OpenFrameworks/libs/openFrameworks/app/ofAppGlutWindow.h;
 		sourceTree = "<absolute>";
@@ -1176,6 +1178,16 @@
 		rType = 0;
 		vrLen = 792;
 		vrLoc = 1134;
+	};
+	4C91F2D814191CBC00C1E1A1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4C91F1541418EB6600C1E1A1 /* dennisApp.cpp */;
+		name = "dennisApp.cpp: 57";
+		rLen = 0;
+		rLoc = 1350;
+		rType = 0;
+		vrLen = 795;
+		vrLoc = 1131;
 	};
 	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 		activeBuildConfigurationName = Debug;
@@ -1211,8 +1223,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 337185546;
-			PBXWorkspaceStateSaveDate = 337185546;
+			PBXPerProjectTemplateStateSaveDate = 337190072;
+			PBXWorkspaceStateSaveDate = 337190072;
 		};
 		perUserProjectItems = {
 			4C91F1471418EB4500C1E1A1 = 4C91F1471418EB4500C1E1A1 /* PBXTextBookmark */;
@@ -1308,18 +1320,19 @@
 			4C91F27D1419084500C1E1A1 = 4C91F27D1419084500C1E1A1 /* PBXTextBookmark */;
 			4C91F281141908BE00C1E1A1 = 4C91F281141908BE00C1E1A1 /* PBXTextBookmark */;
 			4C91F285141908DA00C1E1A1 = 4C91F285141908DA00C1E1A1 /* PBXTextBookmark */;
-			4C91F29114190B1400C1E1A1 /* PBXTextBookmark */ = 4C91F29114190B1400C1E1A1 /* PBXTextBookmark */;
-			4C91F2A114190CE700C1E1A1 /* PBXTextBookmark */ = 4C91F2A114190CE700C1E1A1 /* PBXTextBookmark */;
-			4C91F2A514190D2900C1E1A1 /* PBXTextBookmark */ = 4C91F2A514190D2900C1E1A1 /* PBXTextBookmark */;
-			4C91F2A814190D8C00C1E1A1 /* PBXTextBookmark */ = 4C91F2A814190D8C00C1E1A1 /* PBXTextBookmark */;
-			4C91F2AC14190DD900C1E1A1 /* PBXTextBookmark */ = 4C91F2AC14190DD900C1E1A1 /* PBXTextBookmark */;
-			4C91F2B214190ECA00C1E1A1 /* PBXTextBookmark */ = 4C91F2B214190ECA00C1E1A1 /* PBXTextBookmark */;
-			4C91F2B614190EE500C1E1A1 /* PBXTextBookmark */ = 4C91F2B614190EE500C1E1A1 /* PBXTextBookmark */;
-			4C91F2C21419108000C1E1A1 /* PBXTextBookmark */ = 4C91F2C21419108000C1E1A1 /* PBXTextBookmark */;
-			4C91F2C41419108000C1E1A1 /* PBXTextBookmark */ = 4C91F2C41419108000C1E1A1 /* PBXTextBookmark */;
-			4C91F2C61419108000C1E1A1 /* PBXTextBookmark */ = 4C91F2C61419108000C1E1A1 /* PBXTextBookmark */;
-			4C91F2C71419108000C1E1A1 /* PBXTextBookmark */ = 4C91F2C71419108000C1E1A1 /* PBXTextBookmark */;
-			4C91F2C81419108000C1E1A1 /* PBXTextBookmark */ = 4C91F2C81419108000C1E1A1 /* PBXTextBookmark */;
+			4C91F29114190B1400C1E1A1 = 4C91F29114190B1400C1E1A1 /* PBXTextBookmark */;
+			4C91F2A114190CE700C1E1A1 = 4C91F2A114190CE700C1E1A1 /* PBXTextBookmark */;
+			4C91F2A514190D2900C1E1A1 = 4C91F2A514190D2900C1E1A1 /* PBXTextBookmark */;
+			4C91F2A814190D8C00C1E1A1 = 4C91F2A814190D8C00C1E1A1 /* PBXTextBookmark */;
+			4C91F2AC14190DD900C1E1A1 = 4C91F2AC14190DD900C1E1A1 /* PBXTextBookmark */;
+			4C91F2B214190ECA00C1E1A1 = 4C91F2B214190ECA00C1E1A1 /* PBXTextBookmark */;
+			4C91F2B614190EE500C1E1A1 = 4C91F2B614190EE500C1E1A1 /* PBXTextBookmark */;
+			4C91F2C21419108000C1E1A1 = 4C91F2C21419108000C1E1A1 /* PBXTextBookmark */;
+			4C91F2C41419108000C1E1A1 = 4C91F2C41419108000C1E1A1 /* PBXTextBookmark */;
+			4C91F2C61419108000C1E1A1 = 4C91F2C61419108000C1E1A1 /* PBXTextBookmark */;
+			4C91F2C71419108000C1E1A1 = 4C91F2C71419108000C1E1A1 /* PBXTextBookmark */;
+			4C91F2C81419108000C1E1A1 = 4C91F2C81419108000C1E1A1 /* PBXTextBookmark */;
+			4C91F2D814191CBC00C1E1A1 /* PBXTextBookmark */ = 4C91F2D814191CBC00C1E1A1 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 4C91F0E41418D95700C1E1A1 /* Source Control */;
 		userBuildSettings = {
