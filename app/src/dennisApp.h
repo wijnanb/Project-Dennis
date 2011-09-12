@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxOpenCv.h"
 #include "ofxKinect.h"
+#include "calibration.h"
 
 const int VIDEO_WIDTH = 640;
 const int VIDEO_HEIGHT = 480;
@@ -27,6 +28,8 @@ class dennisApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);	
 	
+		int frameCnt;
+	
 			
 		ofVideoGrabber vidGrabber;	
 		ofxCvColorImage	videoImg;
@@ -36,6 +39,9 @@ class dennisApp : public ofBaseApp{
 		ofxKinectPlayer 	kinectPlayer;
 
 		ofxCvGrayscaleImage kinectImg;
+		ofxCvColorImage	kinectRGBImg;
 		float pointCloudRotationY;
+	
+		Calibration* calibration;
 };
 

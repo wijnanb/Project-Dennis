@@ -3,6 +3,8 @@
 //--------------------------------------------------------------
 void dennisApp::setup(){
 	
+	frameCnt = 0;
+	
 	/** video input */
 	vidGrabber.setVerbose(true);
 	vidGrabber.initGrabber(VIDEO_WIDTH,VIDEO_HEIGHT);
@@ -17,12 +19,18 @@ void dennisApp::setup(){
 	kinect.open();
 	
 	kinectImg.allocate(kinect.width, kinect.height);
+	kinectRGBImg.allocate(kinect.width, kinect.height);
 	
 	pointCloudRotationY = 180;
+	
+	cvNamedWindow( "Calibration", CV_WINDOW_AUTOSIZE );
+	cvNamedWindow( "Undistorted", CV_WINDOW_AUTOSIZE);
+	calibration = new Calibration();
 }
 
 //--------------------------------------------------------------
 void dennisApp::update(){
+	frameCnt++;
 	
 	/** video */
 	bool bNewFrame = false;
@@ -42,7 +50,18 @@ void dennisApp::update(){
 	if(kinect.isFrameNew()) {
 		// load grayscale depth image from the kinect source
 		kinectImg.setFromPixels(kinect.getDepthPixels(), kinect.width, kinect.height);
+		kinectRGBImg.setFromPixels(kinect.getPixels(), kinect.width, kinect.height);
 	}
+
+	if ( frameCnt % 30 == 0 && !calibration->isReady() ) {
+		calibration->grab(&kinectRGBImg);
+	}
+	
+	if( calibration->isReady() ) {
+		calibration->undistort(&kinectRGBImg);
+	}
+	
+	//delete &videoImg;
 }
 
 //--------------------------------------------------------------
@@ -50,13 +69,13 @@ void dennisApp::draw(){
 	ofSetColor(255, 255, 255);
 	
 	/** video */
-	//videoImg.draw(10,10);
+	videoImg.draw(10,10);
 	
 	/** kinect */
-	//kinectImg.draw(660, 10, 640, 480);
-	//kinect.draw(10, 500, 320, 240);
+	kinectImg.draw(660, 10, 640, 480);
+	kinect.draw(10, 500, 320, 240);
 	
-	drawPointCloud();
+	//drawPointCloud();
 }
 
 
